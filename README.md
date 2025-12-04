@@ -7,14 +7,7 @@ This website is a part of a birthday gift for my friend!
 ### In development mode
 
 ```sh
-pnpm dev --host
+pnpm dev
 ```
 
-### In preview mode
-
-```sh
-pnpm build
-pnpm preview --host
-```
-
-You can omit the `--host` flag to expose the website only on your machine.
+You can add the `--host` flag to expose the website to your entire network.
