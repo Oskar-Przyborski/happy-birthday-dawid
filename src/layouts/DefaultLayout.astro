@@ -1,0 +1,68 @@
+---
+import '../styles/global.css';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon1.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Sto lat! Sto lat!</title>
+	</head>
+	<body>
+		<slot />
+	</body>
+</html>
+
+<script>
+	// Swapping favicons!
+	let currentIndex = 0;
+	const favicons = ['/favicon1.svg', '/favicon2.svg', '/favicon3.svg', '/favicon4.svg'];
+
+	const toggleNextFavicon = () => {
+		const nextIndex = (currentIndex + 1) % favicons.length;
+		const linkElement = document.querySelector('link[rel=icon]') as HTMLLinkElement;
+
+		linkElement.href = favicons[nextIndex];
+		currentIndex = nextIndex;
+	};
+
+	addEventListener('load', () => {
+		setInterval(toggleNextFavicon, 1000);
+	});
+</script>
+
+<script>
+	// Play happy birthday on titlebar
+	let currentIndex = 0;
+	const verses = [
+		'Sto lat! Sto lat!',
+		'Niech żyje, żyje nam!',
+		'Sto lat! Sto lat!',
+		'Niech żyje, żyje nam!',
+		'Jeszcze raz, jeszcze raz',
+		'Niech żyje, żyje nam...',
+		'Nieeech  żyje  nam...',
+		'A kto? DAAAAWIIIID!!!!!',
+		'Niech ci gwiazdka pomyślności',
+		'nigdy nieee zagaśnie,',
+		'nigdy niee zagaśnie!',
+		'A kto z nami nie wypije,',
+		'niech go piorun trzaśnie!',
+		'A kto z naami nie wypije,',
+		'niech go piorun trzaśnie! ',
+	];
+
+	const toggleNextVerse = () => {
+		const nextIndex = (currentIndex + 1) % verses.length;
+		const titleElement = document.querySelector('title') as HTMLTitleElement;
+
+		titleElement.textContent = verses[nextIndex];
+		currentIndex = nextIndex;
+	};
+
+	addEventListener('load', () => {
+		setInterval(toggleNextVerse, 3000);
+	});
+</script>
