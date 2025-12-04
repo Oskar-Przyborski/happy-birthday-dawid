@@ -1,16 +1,23 @@
 {
-  "name": "",
-  "type": "module",
-  "version": "0.0.1",
-  "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
-  },
-  "dependencies": {
-    "@tailwindcss/vite": "^4.1.17",
-    "astro": "^5.16.4",
-    "tailwindcss": "^4.1.17"
-  }
+	"name": "happy-birthday-dawid",
+	"type": "module",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview",
+		"astro": "astro"
+	},
+	"dependencies": {
+		"@fontsource-variable/outfit": "^5.2.8",
+		"@tailwindcss/vite": "^4.1.17",
+		"astro": "^5.16.4",
+		"astro-icon": "^1.1.5",
+		"gsap": "^3.13.0",
+		"js-confetti": "^0.13.1",
+		"tailwindcss": "^4.1.17"
+	},
+	"devDependencies": {
+		"@iconify-json/material-symbols": "^1.2.49"
+	}
 }

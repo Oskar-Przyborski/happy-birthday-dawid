@@ -1,0 +1,72 @@
+<div class="bg-blue-950 text-white">
+	<div class="max-w-[1200px] mx-auto px-6">
+		<div class="py-12">
+			<p class="my-1 text-xl">
+				Oprócz <a
+					href="https://www.yubico.com/pl/product/security-key-series/security-key-c-nfc-by-yubico-black/"
+					class="underline"
+					target="_blank"
+					rel="noopener noreferer">klucza sprzętowego</a
+				>, dzięki któremu nikt nigdy* nie ukradnie tobie żadnego konta, mam dla Ciebie jeszcze jeden prezent!
+			</p>
+			<p class="text-sm my-4">*mam nadzieję</p>
+		</div>
+	</div>
+	<div class="max-w-[1200px] mx-auto px-6 relative" id="particles">
+		<div
+			id="present-overlay"
+			class="absolute inset-0 flex items-center justify-center backdrop-blur-md z-10 cursor-pointer"
+			style="transition: opacity 0.3s;"
+		>
+			<span class="text-2xl font-bold">Kliknij, aby otworzyć prezent! 🎁</span>
+		</div>
+		<div class="grid grid-rows-2 grid-cols-1 md:grid-rows-1 md:grid-cols-2 md:items-center">
+			<div class="py-3">
+				<p class="my-1 text-xl">Domena</p>
+				<h1 class="py-3 text-5xl font-medium">kruczek.xyz</h1>
+				<p class="my-2 text-lg">Opłacona na 3 lata!</p>
+			</div>
+			<div class="py-3">
+				<p>Możesz na niej</p>
+				<ul>
+					<li>- bawić się z konfiguracją DNS</li>
+					<li>- podpiąć własną stronę</li>
+					<li>- postawić swój serwer</li>
+					<li>- czy nawet utworzyć maila :O</li>
+				</ul>
+			</div>
+		</div>
+		<div class="py-12">Napisz do mnie, abym mógł ci ją bezpiecznie przekazać 🫡</div>
+	</div>
+	<div class="max-w-[1200px] mx-auto px-6">
+		<div class="py-4 text-end">
+			<p class="text-lg">13 grudnia 2025, Od Oskara</p>
+		</div>
+	</div>
+</div>
+
+<script>
+	import { gsap } from 'gsap';
+	import JSConfetti from 'js-confetti';
+
+	const jsConfetti = new JSConfetti();
+
+	addEventListener('DOMContentLoaded', () => {
+		const overlay = document.getElementById('present-overlay');
+
+		overlay?.addEventListener('click', () => {
+			gsap.timeline()
+				.to(overlay, {
+					opacity: 0,
+					duration: 0.1,
+					ease: 'power2.out',
+				})
+				.to(overlay, {
+					display: 'none',
+					onComplete: () => {
+						jsConfetti.addConfetti();
+					},
+				});
+		});
+	});
+</script>
