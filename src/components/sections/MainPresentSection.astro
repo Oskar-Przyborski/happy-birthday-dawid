@@ -16,7 +16,6 @@
 		<div
 			id="present-overlay"
 			class="absolute inset-0 flex items-center justify-center backdrop-blur-md z-10 cursor-pointer"
-			style="transition: opacity 0.3s;"
 		>
 			<span class="text-2xl font-bold">Kliknij, aby otworzyć prezent! 🎁</span>
 		</div>
@@ -58,14 +57,14 @@
 			gsap.timeline()
 				.to(overlay, {
 					opacity: 0,
-					duration: 0.1,
+					duration: 0.5,
 					ease: 'power2.out',
-				})
-				.to(overlay, {
-					display: 'none',
 					onComplete: () => {
 						jsConfetti.addConfetti();
 					},
+				})
+				.to(overlay, {
+					display: 'none',
 				});
 		});
 	});
